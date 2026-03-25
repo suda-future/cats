@@ -4,7 +4,6 @@ const catsData = [
         id: 1,
         name: "小橘",
         image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=500&h=380&fit=crop",
-        location: "校园内",
         status: "健康",
         age: "2岁",
         gender: "公猫",
