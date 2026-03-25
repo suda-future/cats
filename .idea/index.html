@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>苏州大学未来校区流浪猫之家</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ── HEADER ── -->
+    <header class="header">
+        <div class="container header-inner">
+            <h1>苏州大学未来校区🐾流浪猫之家🐾</h1>
+            <span class="header-subtitle">关爱流浪小天使，共建和谐美好校园</span>
+        </div>
+    </header>
+
+    <!-- ── NAV ── -->
+    <nav class="navbar">
+        <div class="container">
+            <ul>
+                <li><a href="#home" class="active">首页</a></li>
+                <li><a href="#about">关于我们</a></li>
+            </ul>
+            <button id="addCatBtn" class="btn-add">+ 新增猫咪</button>
+        </div>
+    </nav>
+
+    <!-- ── MAIN ── -->
+    <main class="main">
+        <div class="container">
+
+            <!-- 搜索 & 筛选 -->
+            <section class="search-section">
+                <div class="search-row">
+                    <div class="search-input-wrap">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" id="searchInput" placeholder="搜索猫咪名称、特征或描述…">
+                    </div>
+                    <button id="searchBtn">搜索</button>
+                </div>
+                <div class="filter-row">
+                    <div class="filter-item">
+                        <span class="filter-label">健康状态</span>
+                        <select id="statusFilter">
+                            <option value="">全部</option>
+                            <option value="健康">健康</option>
+                            <option value="需要帮助">需要帮助</option>
+                            <option value="已被领养">已被领养</option>
+                        </select>
+                    </div>
+                    <div class="filter-divider"></div>
+                    <div class="filter-item">
+                        <span class="filter-label">是否绝育</span>
+                        <select id="neuteredFilter">
+                            <option value="">全部</option>
+                            <option value="已绝育">已绝育</option>
+                            <option value="未绝育">未绝育</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 首页：猫咪列表 -->
+            <section id="home">
+                <div class="section-title"><h2>未来校区流浪猫信息</h2></div>
+                <div id="catsContainer" class="cats-grid"></div>
+            </section>
+
+            <!-- 关于我们 -->
+            <section class="about-section" id="about" style="display:none;">
+                <div class="section-title"><h2>关于我们</h2></div>
+                <div class="about-content">
+                    <p>苏州大学未来校区流浪猫之家是一个致力于关爱校园流浪猫的自发组织。我们希望通过这个平台，让更多人了解校园里的流浪猫的状态，为它们提供更好的生活环境。</p>
+                    <h3>我们的使命</h3>
+                    <ul>
+                        <li>记录校园流浪猫的信息</li>
+                        <li>帮助有需要的流浪猫</li>
+                        <li>促进校园流浪猫的领养工作</li>
+                        <li>提高师生对流浪猫的关爱意识</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 新增猫咪表单模态框 -->
+            <div id="addCatModal" class="modal">
+                <div class="modal-content modal-add-cat">
+                    <span class="close" title="关闭">&times;</span>
+                    <div class="modal-header">
+                        <h3>🐱 新增猫咪信息</h3>
+                    </div>
+                    <form id="addCatForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="required">猫咪名称</label>
+                                <input type="text" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="required">年龄</label>
+                                <input type="text" name="age" placeholder="如：1岁" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="required">性别</label>
+                                <select name="gender" required>
+                                    <option value="">请选择</option>
+                                    <option value="公猫">公猫</option>
+                                    <option value="母猫">母猫</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="required">健康状态</label>
+                                <select name="status" required>
+                                    <option value="">请选择</option>
+                                    <option value="健康">健康</option>
+                                    <option value="需要帮助">需要帮助</option>
+                                    <option value="已被领养">已被领养</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="required">绝育状态</label>
+                                <select name="neutered" required>
+                                    <option value="">请选择</option>
+                                    <option value="已绝育">已绝育</option>
+                                    <option value="未绝育">未绝育</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="required">照片链接</label>
+                            <input type="url" name="image" placeholder="https://..." required>
+                        </div>
+                        <div class="form-group">
+                            <label>外观特征</label>
+                            <input type="text" name="characteristics" placeholder="如：橘色短毛，尾巴较长">
+                        </div>
+                        <div class="form-group">
+                            <label class="required">详细描述</label>
+                            <textarea name="description" rows="4" placeholder="描述这只猫咪的性格、习性等" required></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="btn-cancel">取消</button>
+                            <button type="submit" class="btn-submit">提交</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- 猫咪详情模态框 -->
+            <div id="catModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" title="关闭">&times;</span>
+                    <div id="modalContent"></div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ── FOOTER ── -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div class="footer-logo">🐾</div>
+            <p>&copy; 2026 苏州大学未来校区流浪猫之家 · 所有权利保留</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
