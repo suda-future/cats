@@ -2,15 +2,14 @@
 const catsData = [
     {
         id: 1,
-        name: "小橘",
-        image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=500&h=380&fit=crop",
+        name: "大李华",
+        image: "images/小橘.jpg",
         status: "健康",
-        age: "2岁",
-        gender: "公猫",
-        description: "小橘是一只非常友好的橘猫，经常在宿舍区游荡。它性格温顺，喜欢和人互动，特别喜欢被抚摸下巴。",
-        lastSeen: "2026-03-08",
-        characteristics: "橘色短毛，尾巴较长，右耳有轻微缺口",
-        neutered: "已绝育"
+        age: "1岁",
+        gender: "母猫",
+        description: "大李华是一只非常亲人的狸花猫，它性格温顺，喜欢和人互动，特别喜欢被摸摸头。",
+        characteristics: "狸花色，毛色逐渐发黄",
+        neutered: "未绝育"
     }
 ];
 
@@ -67,6 +66,25 @@ function setupEventListeners() {
     }
     if (addCatForm) {
         addCatForm.addEventListener('submit', handleAddCatSubmit);
+    }
+
+    // 图片上传预览
+    const catImageInput = document.getElementById('catImageInput');
+    if (catImageInput) {
+        catImageInput.addEventListener('change', function() {
+            const previewDiv = document.getElementById('imagePreview');
+            const previewImg = document.getElementById('previewImg');
+            if (this.files && this.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    previewImg.src = e.target.result;
+                    previewDiv.style.display = 'block';
+                };
+                reader.readAsDataURL(this.files[0]);
+            } else {
+                previewDiv.style.display = 'none';
+            }
+        });
     }
 
     // 新增猫咪模态框的关闭
@@ -284,33 +302,40 @@ function closeAddCatModal() {
 function handleAddCatSubmit(e) {
     e.preventDefault();
 
-    // 获取表单数据
-    const formData = new FormData(addCatForm);
-    const newCat = {
-        id: catsData.length > 0 ? Math.max(...catsData.map(c => c.id)) + 1 : 1,
-        name: formData.get('name').trim(),
-        age: formData.get('age').trim(),
-        gender: formData.get('gender'),
-        status: formData.get('status'),
-        neutered: formData.get('neutered'),
-        location: '校园内', // 默认位置
-        image: formData.get('image').trim(),
-        characteristics: formData.get('characteristics').trim(),
-        description: formData.get('description').trim(),
-        lastSeen: new Date().toISOString().split('T')[0] // 当前日期
+    const imageInput = document.getElementById('catImageInput');
+    const file = imageInput.files[0];
+
+    if (!file) {
+        alert('请选择猫咪照片');
+        return;
+    }
+
+    // 读取图片并转 base64
+    const reader = new FileReader();
+    reader.onload = function(event) {
+        const base64Image = event.target.result;
+
+        const formData = new FormData(addCatForm);
+        const newCat = {
+            id: catsData.length > 0 ? Math.max(...catsData.map(c => c.id)) + 1 : 1,
+            name: formData.get('name').trim(),
+            age: formData.get('age').trim(),
+            gender: formData.get('gender'),
+            status: formData.get('status'),
+            neutered: formData.get('neutered'),
+            location: '校园内',
+            image: base64Image,
+            characteristics: formData.get('characteristics').trim(),
+            description: formData.get('description').trim(),
+            lastSeen: new Date().toISOString().split('T')[0]
+        };
+
+        catsData.push(newCat);
+        filterAndDisplayCats();
+        closeAddCatModal();
+        alert('🎉 新增猫咪成功！');
     };
-
-    // 添加到数据数组
-    catsData.push(newCat);
-
-    // 刷新显示
-    filterAndDisplayCats();
-
-    // 关闭模态框
-    closeAddCatModal();
-
-    // 显示成功提示
-    alert('🎉 新增猫咪成功！');
+    reader.readAsDataURL(file);
 }
 
 console.log('🐱 苏州大学未来校区流浪猫之家 已加载完成！');

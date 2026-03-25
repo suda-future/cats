@@ -131,8 +131,11 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="required">照片链接</label>
-                            <input type="url" name="image" placeholder="https://..." required>
+                            <label class="required">猫咪照片</label>
+                            <input type="file" name="image" accept="image/*" id="catImageInput" required>
+                            <div class="image-preview" id="imagePreview" style="display:none;margin-top:8px;">
+                                <img id="previewImg" src="" alt="预览" style="max-width:200px;max-height:150px;border-radius:8px;object-fit:cover;">
+                            </div>
                         </div>
                         <div class="form-group">
                             <label>外观特征</label>
