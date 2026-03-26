@@ -14,12 +14,23 @@ const catsData = [
     {
         id: 2,
         name: "大开门",
-        image: "images/大李华.jpg",
+        image: "images/大开门.png",
         status: "健康",
         age: "1岁",
         gender: "母猫",
         description: "大开门是一只亲人的三花猫，它性格温顺，未来校区的颜值巅峰。",
         characteristics: "三花色，小脸大美女",
+        neutered: "未绝育"
+    },
+    {
+        id: 3,
+        name: "小橘",
+        image: "images/小橘.png",
+        status: "健康",
+        age: "1岁",
+        gender: "公猫",
+        description: "小橘是一只橘白，喜欢围着送饭官蹭蹭，但是吃饭时特别护食，小心被挠。",
+        characteristics: "橘白，眼神很无辜",
         neutered: "未绝育"
     }
 ];
