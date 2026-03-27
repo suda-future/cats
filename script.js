@@ -7,7 +7,7 @@ const catsData = [
         status: "健康",
         age: "1岁",
         gender: "母猫",
-        description: "大李华是一只非常亲人的狸花猫，它性格温顺，喜欢和人互动，特别喜欢被摸摸头。",
+        description: "大灰是一只非常亲人的狸花猫，它性格温顺，喜欢和人互动，特别喜欢被摸摸头。",
         characteristics: "狸花色，毛色逐渐发黄",
         neutered: "未绝育"
     },
