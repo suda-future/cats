@@ -31,7 +31,7 @@ const catsData = [
         name: "小橘",
         image: "images/小橘.jpg",
         status: "健康",
-        age: "1岁",
+        age: "0-1岁",
         gender: "公猫",
         birthday: "未知",
         description: "小橘是一只橘白，喜欢围着送饭官蹭蹭蹭，但是吃饭时有点护食，小心被挠。",
@@ -60,7 +60,7 @@ const catsData = [
         age: "0-1岁",
         gender: "公猫",
         birthday: "未知",
-        description: "小小橘ABC是3只猫，傻傻分不清楚,随叫随到，摸头的时候稍显抗拒",
+        description: "小小橘ABC是3只猫，傻傻分不清楚，随叫随到，摸头的时候稍显抗拒",
         characteristics: "橘白，都有白领带和白手套",
         neutered: "未绝育",
         updatedAt: "2026-03-30"
