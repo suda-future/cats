@@ -24,7 +24,11 @@ const catsData = [
         description: "小开门是一只亲人的三花猫，它性格温顺，未来校区的颜值巅峰。",
         characteristics: "三花色，小脸大美女",
         neutered: "未绝育",
-        updatedAt: "2026-03-30"
+        updatedAt: "2026-03-30",
+        relations: [
+            { type: "弟弟", name: "小小橘ABC" },
+            { type: "妹妹", name: "小小橘D" }
+        ]
     },
     {
         id: 3,
@@ -63,7 +67,11 @@ const catsData = [
         description: "小小橘ABC是3只猫，傻傻分不清楚，随叫随到，摸头的时候稍显抗拒",
         characteristics: "橘白，都有白领带和白手套",
         neutered: "未绝育",
-        updatedAt: "2026-03-30"
+        updatedAt: "2026-03-30",
+        relations: [
+            { type: "姐姐", name: "小开门" },
+            { type: "姐/妹", name: "小小橘D" }
+        ]
     },
     {
         id: 6,
@@ -76,7 +84,11 @@ const catsData = [
         description: "小小橘D和ABC是一胎生，除了性别，长相也傻傻分不清楚（所以用的同一张图），随叫随到，摸头的时候稍显抗拒",
         characteristics: "橘白，有白领带和白手套",
         neutered: "未绝育",
-        updatedAt: "2026-03-30"
+        updatedAt: "2026-03-30",
+        relations: [
+            { type: "姐姐", name: "小开门" },
+            { type: "兄/弟", name: "小小橘ABC" }
+        ]
     }
 ];
 
@@ -244,6 +256,14 @@ function getBirthdayTag(birthday) {
     return `<span class="tag tag-birthday">🎂 ${formatBirthday(birthday)}</span>`;
 }
 
+function getRelationsHtml(relations) {
+    if (!relations || relations.length === 0) return '';
+    const relationTags = relations.map(rel => 
+        `<span class="relation-tag">${rel.type}：${rel.name}</span>`
+    ).join('');
+    return `<div class="modal-relations">${relationTags}</div>`;
+}
+
 function displayCats(cats) {
     if (cats.length === 0) {
         catsContainer.innerHTML = `
@@ -321,6 +341,7 @@ function openCatModal(catId) {
                 <span class="desc-label">详细描述</span>
                 <p>${cat.description}</p>
             </div>
+            ${getRelationsHtml(cat.relations)}
             ${cat.updatedAt ? `<div class="modal-updated">最后更新：${formatBirthday(cat.updatedAt)}</div>` : ''}
         </div>
     `;
