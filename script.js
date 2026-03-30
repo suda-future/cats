@@ -360,5 +360,5 @@ function handleAddCatSubmit(e) {
     reader.readAsDataURL(file);
 }
 
-console.log('🐱 苏州大学未来校区流浪猫之家 已加载完成！');
+console.log('🐱 苏州大学未来校区校园猫之家 已加载完成！');
 console.log('Ctrl+R 随机展示一只猫咪 | showRandomCat() | exportCatsData()');
