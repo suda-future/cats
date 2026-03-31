@@ -63,11 +63,11 @@ const catsData = [
         status: "健康",
         age: "0-1岁",
         gender: "公猫",
-        birthday: "未知",
+        birthday: "2025-11",
         description: "小小橘ABC是3只猫，傻傻分不清楚，随叫随到，摸头的时候稍显抗拒",
         characteristics: "橘白，都有白领带和白手套",
         neutered: "未绝育",
-        updatedAt: "2026-03-30",
+        updatedAt: "2026-03-31",
         relations: [
             { type: "姐姐", name: "小开门" },
             { type: "姐/妹", name: "小小橘D" }
@@ -80,11 +80,11 @@ const catsData = [
         status: "健康",
         age: "0-1岁",
         gender: "母猫",
-        birthday: "未知",
+        birthday: "2025-11",
         description: "小小橘D和ABC是一胎生，除了性别，长相也傻傻分不清楚（所以用的同一张图），随叫随到，摸头的时候稍显抗拒",
         characteristics: "橘白，有白领带和白手套",
         neutered: "未绝育",
-        updatedAt: "2026-03-30",
+        updatedAt: "2026-03-31",
         relations: [
             { type: "姐姐", name: "小开门" },
             { type: "兄/弟", name: "小小橘ABC" }
@@ -246,6 +246,11 @@ function getNeuteredTag(neutered) {
 
 function formatBirthday(dateStr) {
     if (!dateStr) return '未知';
+    // 仅年月格式 YYYY-MM
+    if (/^\d{4}-\d{2}$/.test(dateStr)) {
+        const [y, m] = dateStr.split('-');
+        return `${y}年${parseInt(m)}月`;
+    }
     const d = new Date(dateStr);
     if (isNaN(d.getTime())) return dateStr;
     return `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`;
