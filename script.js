@@ -89,7 +89,111 @@ const catsData = [
             { type: "姐姐", name: "小开门" },
             { type: "兄/弟", name: "小小橘ABC" }
         ]
+    },
+    {
+        id: 8,
+        name: "大白",
+        image: "images/大白.jpg",
+        status: "健康",
+        age: "2岁",
+        gender: "公猫",
+        birthday: "未知",
+        description: "叫声凄惨，看着可怜。公猫中的战斗机，打遍校园无敌手，在校园里如同做了皇帝一般，不爱干净哈哈",
+        characteristics: "橘白，左前掌受伤",
+        neutered: "未绝育",
+        updatedAt: "2026-04-01",
+    },
+    {
+        id: 9,
+        name: "马里奥",
+        image: "images/马里奥.jpg",
+        status: "健康",
+        age: "1-2岁",
+        gender: "公猫",
+        birthday: "未知",
+        description: "公猫中的小清新，蛮可爱哒，不挑食喜欢吃猫粮，喜欢跳起来蹭人，得名马里奥",
+        characteristics: "英短蓝白，长相可爱",
+        neutered: "未绝育",
+        updatedAt: "2026-04-01",
+    },
+    {
+        id: 10,
+        name: "大刘海",
+        image: "images/大刘海.jpg",
+        status: "健康",
+        age: "0-1岁",
+        gender: "公猫",
+        birthday: "未知",
+        description: "大刘海猫如其名，目前还比较胆小，不让人靠近，干饭速度比赛中荣获第二名",
+        characteristics: "深狸花加白，额头有刘海",
+        neutered: "未绝育",
+        updatedAt: "2026-04-01",
     }
+];
+
+// 离校猫友数据
+const alumniData = [
+    {
+        id: 101,
+        name: "小灰",
+        image: "images/小灰.jpg",
+        gender: "母猫",
+        description: "小灰是最可爱的狸花猫，没有之一，任何时候看到她都好开心，快回来吧我的宝贝555",
+        characteristics: "狸花，小脸，太可爱了",
+        neutered: "未绝育",
+        leaveReason: "其他",
+        updatedAt: "2026-04-01",
+        relations: []
+    },
+    {
+        id: 102,
+        name: "小刘海",
+        image: "images/小刘海.jpg",
+        gender: "母猫",
+        description: "小刘海是取快递路上的一道光，安静乖巧，和小开门玩的很好",
+        characteristics: "白猫，异瞳，很亲人",
+        neutered: "未绝育",
+        leaveReason: "其他",
+        updatedAt: "2026-04-01",
+        relations: []
+    },
+    {
+        id: 103,
+        name: "奶牛两兄弟",
+        image: "images/奶牛两兄弟.JPG",
+        gender: "公猫",
+        description: "2只奶牛，有媒婆痣的那只会抓老鼠相当厉害哟",
+        characteristics: "奶牛，其中一只有媒婆痣",
+        neutered: "未绝育",
+        leaveReason: "走失",
+        updatedAt: "2026-04-01",
+        relations: []
+    },
+    {
+        id: 104,
+        name: "大脸猫",
+        image: "images/大脸猫.JPG",
+        gender: "公猫",
+        description: "大脸猫长得很讨喜，据说跟别的猫私奔出走了🐶",
+        characteristics: "折耳彩狸，圆脸很可爱",
+        neutered: "未绝育",
+        leaveReason: "走失",
+        updatedAt: "2026-04-01",
+        relations: []
+    },
+    {
+        id: 105,
+        name: "大橘白",
+        image: "images/大橘白.jpg",
+        gender: "公猫",
+        description: "大橘白24年就是校园名猫了，有点怕人",
+        characteristics: "橘白，看着挺机灵",
+        neutered: "未绝育",
+        leaveReason: "其他",
+        updatedAt: "2026-04-01",
+        relations: []
+    }
+
 ];
 
 // DOM 元素
@@ -104,12 +208,20 @@ const addCatBtn       = document.getElementById('addCatBtn');
 const addCatModal     = document.getElementById('addCatModal');
 const addCatForm      = document.getElementById('addCatForm');
 
+// 离校猫友 DOM
+const alumniContainer     = document.getElementById('alumniContainer');
+const alumniSearchInput   = document.getElementById('alumniSearchInput');
+const alumniSearchBtn     = document.getElementById('alumniSearchBtn');
+const leaveReasonFilter   = document.getElementById('leaveReasonFilter');
+
 // 当前过滤条件
 let currentFilters = { searchText: '', status: '', neutered: '' };
+let alumniFilters  = { searchText: '', leaveReason: '' };
 
 // ── 初始化 ───────────────────────────────────
 document.addEventListener('DOMContentLoaded', function () {
     displayCats(catsData);
+    displayAlumni(alumniData);
     setupEventListeners();
 });
 
@@ -120,6 +232,11 @@ function setupEventListeners() {
 
     statusFilter.addEventListener('change', handleFilter);
     neuteredFilter.addEventListener('change', handleFilter);
+
+    // 离校猫友搜索 & 筛选
+    alumniSearchBtn.addEventListener('click', handleAlumniSearch);
+    alumniSearchInput.addEventListener('keydown', e => { if (e.key === 'Enter') handleAlumniSearch(); });
+    leaveReasonFilter.addEventListener('change', handleAlumniFilter);
 
     // 猫咪详情模态框的关闭按钮
     catModal.addEventListener('click', function(e) {
@@ -305,6 +422,115 @@ function displayCats(cats) {
     `).join('');
 }
 
+// ── 离校猫友 搜索 / 筛选 ───────────────────
+function handleAlumniSearch() {
+    alumniFilters.searchText = alumniSearchInput.value.toLowerCase().trim();
+    filterAndDisplayAlumni();
+}
+
+function handleAlumniFilter() {
+    alumniFilters.leaveReason = leaveReasonFilter.value;
+    filterAndDisplayAlumni();
+}
+
+function filterAndDisplayAlumni() {
+    const filtered = alumniData.filter(cat => {
+        const q = alumniFilters.searchText;
+        const matchSearch      = !q ||
+            cat.name.toLowerCase().includes(q) ||
+            cat.description.toLowerCase().includes(q) ||
+            cat.characteristics.toLowerCase().includes(q);
+        const matchLeaveReason = !alumniFilters.leaveReason || cat.leaveReason === alumniFilters.leaveReason;
+        return matchSearch && matchLeaveReason;
+    });
+    displayAlumni(filtered);
+}
+
+function displayAlumni(cats) {
+    if (cats.length === 0) {
+        alumniContainer.innerHTML = `
+            <div class="empty-state">
+                <span class="empty-icon">🐾</span>
+                <strong>${alumniData.length === 0 ? '暂无离校猫友记录' : '没有找到匹配的猫咪'}</strong>
+                <p>${alumniData.length === 0 ? '期待有朝一日能在这里纪念它们' : '换个关键词或调整筛选条件试试吧'}</p>
+            </div>`;
+        return;
+    }
+
+    alumniContainer.innerHTML = cats.map(cat => `
+        <div class="cat-card" onclick="openAlumniModal(${cat.id})">
+            <div class="cat-image-wrap">
+                <img src="${cat.image}" alt="${cat.name}"
+                     onerror="this.style.display='none'">
+                <div class="cat-status-overlay">
+                    ${getLeaveReasonTag(cat.leaveReason)}
+                </div>
+            </div>
+            <div class="cat-info">
+                <div class="cat-name">${cat.name}</div>
+                <div class="cat-tags">
+                    ${getGenderTag(cat.gender)}
+                </div>
+                <p class="cat-description">${cat.description}</p>
+                <div class="cat-footer">
+                    <span>点击查看详情 →</span>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+function getLeaveReasonTag(leaveReason) {
+    const map = {
+        '被领养': 'leave-adopted',
+        '走失':   'leave-lost',
+        '其他':   'leave-other'
+    };
+    const cls = map[leaveReason] || 'leave-other';
+    return `<span class="status-badge ${cls}">${leaveReason || '未知'}</span>`;
+}
+
+function openAlumniModal(catId) {
+    const cat = alumniData.find(c => c.id === catId);
+    if (!cat) return;
+
+    modalContent.innerHTML = `
+        <div class="modal-image">
+            <img src="${cat.image}" alt="${cat.name}"
+                 onerror="this.style.display='none'">
+        </div>
+        <div class="modal-info">
+            <div class="modal-header">
+                <h3>${cat.name}</h3>
+                ${getLeaveReasonTag(cat.leaveReason)}
+            </div>
+            <div class="modal-details">
+                <div class="modal-detail">
+                    <strong>性别</strong>
+                    <span>${cat.gender}</span>
+                </div>
+                <div class="modal-detail">
+                    <strong>离校原因</strong>
+                    <span>${cat.leaveReason || '未知'}</span>
+                </div>
+                <div class="modal-detail">
+                    <strong>外观特征</strong>
+                    <span>${cat.characteristics}</span>
+                </div>
+            </div>
+            <div class="modal-description">
+                <span class="desc-label">详细描述</span>
+                <p>${cat.description}</p>
+            </div>
+            ${getRelationsHtml(cat.relations)}
+            ${cat.updatedAt ? `<div class="modal-updated">最后更新：${formatBirthday(cat.updatedAt)}</div>` : ''}
+        </div>
+    `;
+
+    catModal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
 // ── 模态框 ───────────────────────────────────
 function openCatModal(catId) {
     const cat = catsData.find(c => c.id === catId);
@@ -367,15 +593,23 @@ function showPage(pageId) {
         s.style.display = 'none';
     });
 
+    // 隐藏在校猫友的筛选器
+    const searchSection = document.querySelector('.search-section');
+    if (searchSection) searchSection.style.display = 'none';
+
     // 显示目标页面
     const target = document.getElementById(pageId);
     if (target) target.style.display = 'block';
 
-    // 如果是首页，显示筛选器并应用当前筛选条件
+    // 如果是在校猫友，显示筛选器并应用当前筛选条件
     if (pageId === 'home') {
-        const searchSection = document.querySelector('.search-section');
         if (searchSection) searchSection.style.display = 'block';
         filterAndDisplayCats();
+    }
+
+    // 如果是离校猫友，应用当前筛选条件
+    if (pageId === 'alumni') {
+        filterAndDisplayAlumni();
     }
 }
 

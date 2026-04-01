@@ -20,7 +20,8 @@
     <nav class="navbar">
         <div class="container">
             <ul>
-                <li><a href="#home" class="active">首页</a></li>
+                <li><a href="#home" class="active">在校猫友</a></li>
+                <li><a href="#alumni">离校猫友</a></li>
                 <li><a href="#about">关于我们</a></li>
             </ul>
             <!-- <button id="addCatBtn" class="btn-add">+ 新增猫咪</button> -->
@@ -47,7 +48,6 @@
                             <option value="">全部</option>
                             <option value="健康">健康</option>
                             <option value="需要帮助">需要帮助</option>
-                            <option value="已被领养">已被领养</option>
                         </select>
                     </div>
                     <div class="filter-divider"></div>
@@ -62,10 +62,36 @@
                 </div>
             </section>
 
-            <!-- 首页：猫咪列表 -->
+            <!-- 首页：在校猫咪列表 -->
             <section id="home">
-                <div class="section-title"><h2>未来校区校园猫信息</h2></div>
+                <div class="section-title"><h2>在校猫友信息</h2></div>
                 <div id="catsContainer" class="cats-grid"></div>
+            </section>
+
+            <!-- 离校猫友 -->
+            <section id="alumni" style="display:none;">
+                <div class="search-section" id="alumniSearchSection">
+                    <div class="search-row">
+                        <div class="search-input-wrap">
+                            <span class="search-icon">🔍</span>
+                            <input type="text" id="alumniSearchInput" placeholder="搜索猫咪名称、特征或描述…">
+                        </div>
+                        <button id="alumniSearchBtn">搜索</button>
+                    </div>
+                    <div class="filter-row">
+                        <div class="filter-item">
+                            <span class="filter-label">离校原因</span>
+                            <select id="leaveReasonFilter">
+                                <option value="">全部</option>
+                                <option value="被领养">被领养</option>
+                                <option value="走失">走失</option>
+                                <option value="其他">其他</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-title"><h2>离校猫友信息</h2></div>
+                <div id="alumniContainer" class="cats-grid"></div>
             </section>
 
             <!-- 关于我们 -->

@@ -448,6 +448,11 @@ body {
 .status-need-help  { background: #FFE4E0; color: #B83820; }
 .status-adopted    { background: #DDE8FF; color: #2A50B0; }
 
+.tag-leave-reason  { background: #FFF0E0; color: #A06018; }
+.leave-adopted       { background: #DDE8FF; color: #2A50B0; }
+.leave-lost          { background: #FFE4E0; color: #B83820; }
+.leave-other         { background: #E8E4F5; color: #6C5FA8; }
+
 /* ──────────────────────────────────────────
    EMPTY STATE
 ────────────────────────────────────────── */
