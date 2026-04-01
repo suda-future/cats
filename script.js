@@ -160,7 +160,7 @@ const alumniData = [
     {
         id: 103,
         name: "奶牛两兄弟",
-        image: "images/奶牛两兄弟.JPG",
+        image: "images/奶牛两兄弟.jpg",
         gender: "公猫",
         description: "2只奶牛，有媒婆痣的那只会抓老鼠相当厉害哟",
         characteristics: "奶牛，其中一只有媒婆痣",
@@ -172,7 +172,7 @@ const alumniData = [
     {
         id: 104,
         name: "大脸猫",
-        image: "images/大脸猫.JPG",
+        image: "images/大脸猫.jpg",
         gender: "公猫",
         description: "大脸猫长得很讨喜，据说跟别的猫私奔出走了🐶",
         characteristics: "折耳彩狸，圆脸很可爱",
