@@ -5,13 +5,16 @@ const catsData = [
         name: "灰灰酱",
         image: "images/灰灰酱.jpg",
         status: "健康",
-        age: "1岁",
+        age: "0-1岁",
         gender: "母猫",
-        birthday: "未知",
-        description: "灰灰酱是一只非常亲人的狸花猫，它性格温顺，喜欢和人互动，特别喜欢被摸摸头。",
+        birthday: "2025-05",
+        description: "灰灰酱战斗力不详，遇强则强，可以友好地跟她互动",
         characteristics: "狸花色，毛色逐渐发黄",
         neutered: "未绝育",
-        updatedAt: "2026-03-30"
+        updatedAt: "2026-04-02",
+        relations: [
+            { type: "闺蜜", name: "小灰" },
+        ]
     },
     {
         id: 2,
@@ -21,13 +24,14 @@ const catsData = [
         age: "0-1岁",
         gender: "母猫",
         birthday: "2025-07-06",
-        description: "小开门是一只亲人的三花猫，它性格温顺，未来校区的颜值巅峰。",
+        description: "小开门是只三花喵，猫中刘亦菲，未来校区的颜值巅峰。",
         characteristics: "三花色，小脸大美女",
         neutered: "未绝育",
-        updatedAt: "2026-03-30",
+        updatedAt: "2026-04-02",
         relations: [
             { type: "弟弟", name: "小小橘ABC" },
-            { type: "妹妹", name: "小小橘D" }
+            { type: "妹妹", name: "小小橘D" },
+            { type: "闺蜜", name: "小刘海" }
         ]
     },
     {
@@ -51,10 +55,10 @@ const catsData = [
         age: "1岁",
         gender: "母猫",
         birthday: "未知",
-        description: "面具侠是一只简州猫，面部像带着面具而得名，颜值顶流，非常亲人，喜欢干饭，育有3子",
+        description: "面具侠是一只简州猫，面部像带着面具而得名，大明星的颜值，喜欢干饭，育有3子",
         characteristics: "简州猫，小脸超可爱呀",
         neutered: "未绝育",
-        updatedAt: "2026-03-30"
+        updatedAt: "2026-04-02"
     },
     {
         id: 5,
@@ -64,7 +68,7 @@ const catsData = [
         age: "0-1岁",
         gender: "公猫",
         birthday: "2025-11",
-        description: "小小橘ABC是3只猫，傻傻分不清楚，随叫随到，摸头的时候稍显抗拒",
+        description: "小小橘ABC是3只猫，傻傻分不清楚，喜欢奔跑，摸头的时候稍显抗拒",
         characteristics: "橘白，都有白领带和白手套",
         neutered: "未绝育",
         updatedAt: "2026-03-31",
@@ -81,10 +85,10 @@ const catsData = [
         age: "0-1岁",
         gender: "母猫",
         birthday: "2025-11",
-        description: "小小橘D和ABC是一胎生，除了性别，长相也傻傻分不清楚（所以用的同一张图），随叫随到，摸头的时候稍显抗拒",
+        description: "小小橘D和ABC是一胎生，除性别外长相傻傻分不清楚（暂用一张图），摸头的时候稍显抗拒",
         characteristics: "橘白，有白领带和白手套",
         neutered: "未绝育",
-        updatedAt: "2026-03-31",
+        updatedAt: "2026-04-02",
         relations: [
             { type: "姐姐", name: "小开门" },
             { type: "兄/弟", name: "小小橘ABC" }
@@ -98,7 +102,7 @@ const catsData = [
         age: "2岁",
         gender: "公猫",
         birthday: "未知",
-        description: "叫声凄惨，看着可怜。公猫中的战斗机，打遍校园无敌手，在校园里如同做了皇帝一般，不爱干净哈哈",
+        description: "叫声凄惨，看着可怜。公猫中的战斗机，打遍校园无敌手，在校园里如同做了皇帝一般，不是很爱干净哈哈",
         characteristics: "橘白，左前掌受伤",
         neutered: "未绝育",
         updatedAt: "2026-04-01",
@@ -124,7 +128,7 @@ const catsData = [
         age: "0-1岁",
         gender: "公猫",
         birthday: "未知",
-        description: "大刘海猫如其名，目前还比较胆小，不让人靠近，干饭速度比赛中荣获第二名",
+        description: "大刘海猫如其名，比较胆小，生人勿近，干饭速度比赛中荣获第二名",
         characteristics: "深狸花加白，额头有刘海",
         neutered: "未绝育",
         updatedAt: "2026-04-01",
@@ -138,12 +142,14 @@ const alumniData = [
         name: "小灰",
         image: "images/小灰.jpg",
         gender: "母猫",
-        description: "小灰是最可爱的狸花猫，没有之一，任何时候看到她都好开心，快回来吧我的宝贝555",
-        characteristics: "狸花，小脸，太可爱了",
+        description: "小灰是最可爱的狸花猫，没有之一，任何时候看到她都超级开心",
+        characteristics: "狸花，小脸美女",
         neutered: "未绝育",
         leaveReason: "其他",
         updatedAt: "2026-04-01",
-        relations: []
+        relations: [
+            { type: "闺蜜", name: "灰灰酱" },
+        ]
     },
     {
         id: 102,
@@ -155,7 +161,9 @@ const alumniData = [
         neutered: "未绝育",
         leaveReason: "其他",
         updatedAt: "2026-04-01",
-        relations: []
+        relations: [
+            { type: "闺蜜", name: "小开门" }
+        ]
     },
     {
         id: 103,
@@ -174,11 +182,11 @@ const alumniData = [
         name: "大脸猫",
         image: "images/大脸猫.jpg",
         gender: "公猫",
-        description: "大脸猫长得很讨喜，据说跟别的猫私奔出走了🐶",
+        description: "大脸猫非常呆萌可爱，取快递路上的另一个开心果",
         characteristics: "折耳彩狸，圆脸很可爱",
         neutered: "未绝育",
-        leaveReason: "走失",
-        updatedAt: "2026-04-01",
+        leaveReason: "被领养",
+        updatedAt: "2026-04-02",
         relations: []
     },
     {
@@ -186,12 +194,39 @@ const alumniData = [
         name: "大橘白",
         image: "images/大橘白.jpg",
         gender: "公猫",
-        description: "大橘白24年就是校园名猫了，有点怕人",
-        characteristics: "橘白，看着挺机灵",
+        description: "大橘白24年就是校园名猫了，据说有点怕人",
+        characteristics: "橘白，看着挺机灵的一小伙",
         neutered: "未绝育",
         leaveReason: "其他",
         updatedAt: "2026-04-01",
         relations: []
+    },
+    {
+        id: 106,
+        name: "十一",
+        image: "images/十一.jpg",
+        gender: "公猫",
+        description: "昔日躲车库怂怂，今日家中欺花弄草发福小猪咪",
+        characteristics: "狸花，已成百变小猪咪",
+        neutered: "已绝育",
+        leaveReason: "被领养",
+        updatedAt: "2026-04-02",
+        relations: []
+    },
+    {
+        id: 107,
+        name: "橘妈",
+        image: "images/橘妈.jpg",
+        gender: "母猫",
+        description: "未来校区的长公主，热爱学习的橘女士，天天坐电梯巡视教学楼。未来校区的崽崽还在等你肥来",
+        characteristics: "橘猫，聪明宝宝",
+        neutered: "未绝育",
+        leaveReason: "其他",
+        updatedAt: "2026-04-02",
+        relations: [
+            { type: "女儿", name: "小开门、小小橘D" },
+            { type: "儿子", name: "小小橘ABC" }
+        ]
     }
 
 ];
