@@ -58,7 +58,11 @@ const catsData = [
         description: "面具侠是一只简州猫，面部像带着面具而得名，大明星的颜值，喜欢干饭，育有3子",
         characteristics: "简州猫，小脸超可爱呀",
         neutered: "未绝育",
-        updatedAt: "2026-04-02"
+        updatedAt: "2026-04-02",
+        relations: [
+            { type: "闺蜜", name: "小刘海" }
+        ]
+
     },
     {
         id: 5,
@@ -99,7 +103,7 @@ const catsData = [
         name: "大白",
         image: "images/大白.jpg",
         status: "健康",
-        age: "2岁",
+        age: "3岁",
         gender: "公猫",
         birthday: "未知",
         description: "叫声凄惨，看着可怜。公猫中的战斗机，打遍校园无敌手，在校园里如同做了皇帝一般，不是很爱干净哈哈",
@@ -160,9 +164,9 @@ const alumniData = [
         characteristics: "白猫，异瞳，很亲人",
         neutered: "未绝育",
         leaveReason: "其他",
-        updatedAt: "2026-04-01",
+        updatedAt: "2026-04-03",
         relations: [
-            { type: "闺蜜", name: "小开门" }
+            { type: "闺蜜", name: "小开门、面具侠" },
         ]
     },
     {
@@ -179,14 +183,14 @@ const alumniData = [
     },
     {
         id: 104,
-        name: "大脸猫",
+        name: "薯条",
         image: "images/大脸猫.jpg",
-        gender: "公猫",
-        description: "大脸猫非常呆萌可爱，取快递路上的另一个开心果",
+        gender: "母猫",
+        description: "薯条非常呆萌可爱，取快递路上的另一个开心果",
         characteristics: "折耳彩狸，圆脸很可爱",
         neutered: "未绝育",
         leaveReason: "被领养",
-        updatedAt: "2026-04-02",
+        updatedAt: "2026-04-03",
         relations: []
     },
     {
