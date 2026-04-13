@@ -26,8 +26,9 @@ const catsData = [
         birthday: "2025-07-06",
         description: "小开门是只三花喵，猫中刘亦菲，未来校区的颜值巅峰。",
         characteristics: "三花色，小脸大美女",
-        neutered: "未绝育",
-        updatedAt: "2026-04-02",
+        neutered: "已绝育",
+        neuteredDate: "2026-04-09",
+        updatedAt: "2026-04-13",
         relations: [
             { type: "弟弟", name: "小小橘ABC" },
             { type: "妹妹", name: "小小橘D" },
@@ -66,19 +67,62 @@ const catsData = [
     },
     {
         id: 5,
-        name: "小小橘ABC",
+        name: "小小橘A",
         image: "images/小小橘ABCD.jpg",
         status: "健康",
         age: "0-1岁",
         gender: "公猫",
         birthday: "2025-11",
-        description: "小小橘ABC是3只猫，傻傻分不清楚，喜欢奔跑，摸头的时候稍显抗拒",
-        characteristics: "橘白，都有白领带和白手套",
-        neutered: "未绝育",
-        updatedAt: "2026-03-31",
+        description: "小小橘A是三只兄弟中的老大，性格最活泼，最喜欢奔跑玩耍",
+        characteristics: "橘白，白领带和白手套",
+        neutered: "已绝育",
+        neuteredDate: "2026-04-09",
+        updatedAt: "2026-04-13",
         relations: [
             { type: "姐姐", name: "小开门" },
-            { type: "姐/妹", name: "小小橘D" }
+            { type: "弟弟", name: "小小橘B" },
+            { type: "弟弟", name: "小小橘C" },
+            { type: "妹妹", name: "小小橘D" }
+        ]
+    },
+    {
+        id: 5.1,
+        name: "小小橘B",
+        image: "images/小小橘ABCD.jpg",
+        status: "健康",
+        age: "0-1岁",
+        gender: "公猫",
+        birthday: "2025-11",
+        description: "小小橘B是三只兄弟中的老二，性格温和，摸头的时候会有点害羞",
+        characteristics: "橘白，白领带和白手套",
+        neutered: "已绝育",
+        neuteredDate: "2026-04-09",
+        updatedAt: "2026-04-13",
+        relations: [
+            { type: "姐姐", name: "小开门" },
+            { type: "哥哥", name: "小小橘A" },
+            { type: "弟弟", name: "小小橘C" },
+            { type: "妹妹", name: "小小橘D" }
+        ]
+    },
+    {
+        id: 5.2,
+        name: "小小橘C",
+        image: "images/小小橘ABCD.jpg",
+        status: "健康",
+        age: "0-1岁",
+        gender: "公猫",
+        birthday: "2025-11",
+        description: "小小橘C是三只兄弟中的老三，最粘人，喜欢围着人转圈圈",
+        characteristics: "橘白，白领带和白手套",
+        neutered: "已绝育",
+        neuteredDate: "2026-04-14",
+        updatedAt: "2026-04-13",
+        relations: [
+            { type: "姐姐", name: "小开门" },
+            { type: "哥哥", name: "小小橘A" },
+            { type: "哥哥", name: "小小橘B" },
+            { type: "妹妹", name: "小小橘D" }
         ]
     },
     {
@@ -108,8 +152,9 @@ const catsData = [
         birthday: "未知",
         description: "叫声凄惨，看着可怜。公猫中的战斗机，打遍校园无敌手，在校园里如同做了皇帝一般，不是很爱干净哈哈",
         characteristics: "橘白，左前掌受伤",
-        neutered: "未绝育",
-        updatedAt: "2026-04-01",
+        neutered: "已绝育",
+        neuteredDate: "2026-04-14",
+        updatedAt: "2026-04-13",
     },
     {
         id: 9,
@@ -147,8 +192,35 @@ const catsData = [
         birthday: "未知",
         description: "三花妹比较胆小，生人勿近，干饭速度比赛中荣获第一名，让我们祝贺她！",
         characteristics: "三花，长得标志",
-        neutered: "未绝育",
+        neutered: "已绝育",
+        neuteredDate: "2026-04-09",
         updatedAt: "2026-04-07",
+    },
+    {
+        id: 12,
+        name: "",
+        image: "images/斑斑.jpg",
+        status: "健康",
+        age: "1岁",
+        gender: "母猫",
+        birthday: "未知",
+        description: "斑斑是喜欢神出鬼没的侦探，总在你以为她消失时，从某个角落投来一道神秘的目光",
+        characteristics: "狸花加白，嘴角有对小酒窝",
+        neutered: "未绝育",
+        updatedAt: "2026-04-13",
+    },
+    {
+        id: 13,
+        name: "",
+        image: "images/雪团子.jpg",
+        status: "健康",
+        age: "1岁",
+        gender: "母猫",
+        birthday: "未知",
+        description: "白白的你像个可爱的雪团子，告诉我在哪里可以找到你？",
+        characteristics: "三花猫",
+        neutered: "未绝育",
+        updatedAt: "2026-04-13",
     }
 ];
 
@@ -241,8 +313,11 @@ const alumniData = [
         leaveReason: "其他",
         updatedAt: "2026-04-02",
         relations: [
-            { type: "女儿", name: "小开门、小小橘D" },
-            { type: "儿子", name: "小小橘ABC" }
+            { type: "女儿", name: "小开门" },
+            { type: "女儿", name: "小小橘D" },
+            { type: "儿子", name: "小小橘A" },
+            { type: "儿子", name: "小小橘B" },
+            { type: "儿子", name: "小小橘C" }
         ]
     },
     {
@@ -624,7 +699,7 @@ function openCatModal(catId) {
                 </div>
                 <div class="modal-detail">
                     <strong>绝育状态</strong>
-                    <span>${cat.neutered}</span>
+                    <span>${cat.neutered}${cat.neuteredDate ? '（' + cat.neuteredDate + '）' : ''}</span>
                 </div>
                 <div class="modal-detail">
                     <strong>外观特征</strong>
