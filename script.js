@@ -52,7 +52,7 @@ const catsData = [
         id: 4,
         name: "面具侠",
         image: "images/面具侠.jpg",
-        status: "健康",
+        status: "需要帮助",
         age: "1岁",
         gender: "母猫",
         birthday: "未知",
@@ -146,7 +146,7 @@ const catsData = [
         id: 8,
         name: "大白",
         image: "images/大白.jpg",
-        status: "健康",
+        status: "需要帮助",
         age: "3岁",
         gender: "公猫",
         birthday: "未知",
@@ -404,7 +404,7 @@ const alumniData = [
         characteristics: "彩狸，头顶花纹清晰",
         neutered: "未绝育",
         leaveReason: "其他",
-        updatedAt: "2026-04-03",
+        updatedAt: "2026-04-23",
         relations: [
             { type: "兄/弟/姐/妹", name: "栗子、小盛" },
         ]
@@ -418,7 +418,7 @@ const alumniData = [
         characteristics: "狸白",
         neutered: "未绝育",
         leaveReason: "其他",
-        updatedAt: "2026-04-03",
+        updatedAt: "2026-04-23",
         relations: [
             { type: "兄/弟/姐/妹", name: "栗子、咪酱（小笨）" },
         ]
@@ -432,7 +432,7 @@ const alumniData = [
         characteristics: "长毛狸白，甜美系男孩",
         neutered: "未绝育",
         leaveReason: "被领养",
-        updatedAt: "2026-04-03",
+        updatedAt: "2026-04-23",
         relations: [
             { type: "兄/弟/姐/妹", name: "焦糖、待取名1、待取名2" },
         ]
