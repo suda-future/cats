@@ -4,14 +4,15 @@ const catsData = [
         id: 1,
         name: "灰灰酱",
         image: "images/灰灰酱.jpg",
-        status: "健康",
+        status: "需要帮助",
+        helpReason: "猫瘟混检阳性",
         age: "0-1岁",
         gender: "母猫",
         birthday: "2025-05",
         description: "灰灰酱战斗力不详，遇强则强，可以友好地跟她互动",
         characteristics: "狸花色，毛色逐渐发黄",
         neutered: "未绝育",
-        updatedAt: "2026-04-02",
+        updatedAt: "2026-04-26",
         relations: [
             { type: "闺蜜", name: "小灰" },
         ]
@@ -53,13 +54,14 @@ const catsData = [
         name: "面具侠",
         image: "images/面具侠.jpg",
         status: "需要帮助",
+        helpReason: "猫瘟阳性",
         age: "1岁",
         gender: "母猫",
         birthday: "未知",
         description: "面具侠是一只简州猫，面部像带着面具而得名，大明星的颜值，喜欢干饭，育有3子",
         characteristics: "简州猫，小脸超可爱呀",
         neutered: "未绝育",
-        updatedAt: "2026-04-02",
+        updatedAt: "2026-04-26",
         relations: [
             { type: "闺蜜", name: "小刘海" }
         ]
@@ -129,14 +131,15 @@ const catsData = [
         id: 6,
         name: "小小橘D",
         image: "images/小小橘ABCD.jpg",
-        status: "健康",
+        status: "需要帮助",
+        helpReason: "猫瘟混检阳性",
         age: "0-1岁",
         gender: "母猫",
         birthday: "2025-11",
         description: "小小橘D和ABC是一胎生，除性别外长相傻傻分不清楚（暂用一张图），摸头的时候稍显抗拒",
         characteristics: "橘白，有白领带和白手套",
         neutered: "未绝育",
-        updatedAt: "2026-04-02",
+        updatedAt: "2026-04-26",
         relations: [
             { type: "姐姐", name: "小开门" },
             { type: "兄/弟", name: "小小橘ABC" }
@@ -146,7 +149,7 @@ const catsData = [
         id: 8,
         name: "大白",
         image: "images/大白.jpg",
-        status: "需要帮助",
+        status: "健康",
         age: "3岁",
         gender: "公猫",
         birthday: "未知",
@@ -200,14 +203,15 @@ const catsData = [
         id: 12,
         name: "斑斑",
         image: "images/斑斑.jpg",
-        status: "健康",
+        status: "需要帮助",
+        helpReason: "已生产，需养育小猫",
         age: "1岁",
         gender: "母猫",
         birthday: "未知",
         description: "斑斑是喜欢神出鬼没的侦探，总在你以为她消失时，从某个角落投来一道神秘的目光",
         characteristics: "狸花加白，嘴角有对小酒窝",
         neutered: "未绝育",
-        updatedAt: "2026-04-13",
+        updatedAt: "2026-04-26",
     },
     {
         id: 13,
@@ -239,22 +243,6 @@ const catsData = [
         ]
     },
     {
-        id: 15,
-        name: "待取名1",
-        image: "images/灰灰娃2.jpg",
-        status: "健康",
-        age: "0-1岁",
-        gender: "未知",
-        birthday: "2025-02",
-        description: "灰灰的孩子，等待负责人认领取哟",
-        characteristics: "长毛狸白，毛茸茸的",
-        neutered: "未绝育",
-        updatedAt: "2026-04-23",
-        relations: [
-            { type: "兄/弟/姐/妹", name: "Siri、焦糖、待取名2" }
-        ]
-    },
-    {
         id: 16,
         name: "待取名2",
         image: "images/灰灰娃3.jpg",
@@ -270,22 +258,6 @@ const catsData = [
             { type: "兄/弟/姐/妹", name: "Siri、焦糖、待取名1" }
         ]
     },
-    {
-        id: 17,
-        name: "栗子",
-        image: "images/栗子.jpg",
-        status: "需要帮助",
-        age: "0-1岁",
-        gender: "未知",
-        birthday: "2025-03-06",
-        description: "栗子加油打怪兽，好日子在等着你",
-        characteristics: "彩狸",
-        neutered: "未绝育",
-        updatedAt: "2026-04-23",
-        relations: [
-            { type: "兄/弟/姐/妹", name: "咪酱（小笨）、小盛" }
-        ]
-    }
 ];
 
 // 离校猫友数据
@@ -392,7 +364,7 @@ const alumniData = [
         description: "最亲人的小天使，教会了我们毫无保留的信任。回喵星也要继续快乐，谢谢你用短暂的时光治愈了校园，往后每一个晒太阳的角落，都是你。",
         characteristics: "三花，萌娃",
         neutered: "未绝育",
-        leaveReason: "其他",
+        leaveReason: "去喵星",
         updatedAt: "2026-04-07"
     },
     {
@@ -403,7 +375,7 @@ const alumniData = [
         description: "咪酱（小笨）是上天赐给同学们的季节限定礼物，喵星很美好，晚安咪酱，谢谢你这6周带来的美好故事[2026:0306-0418]",
         characteristics: "彩狸，头顶花纹清晰",
         neutered: "未绝育",
-        leaveReason: "其他",
+        leaveReason: "去喵星",
         updatedAt: "2026-04-23",
         relations: [
             { type: "兄/弟/姐/妹", name: "栗子、小盛" },
@@ -417,7 +389,7 @@ const alumniData = [
         description: "小盛去喵星找咪酱了，晚安小盛，谢谢你这7周带来的美好故事[2026:0306-0423]",
         characteristics: "狸白",
         neutered: "未绝育",
-        leaveReason: "其他",
+        leaveReason: "去喵星",
         updatedAt: "2026-04-23",
         relations: [
             { type: "兄/弟/姐/妹", name: "栗子、咪酱（小笨）" },
@@ -435,6 +407,34 @@ const alumniData = [
         updatedAt: "2026-04-23",
         relations: [
             { type: "兄/弟/姐/妹", name: "焦糖、待取名1、待取名2" },
+        ]
+    },
+    {
+        id: 112,
+        name: "栗子",
+        image: "images/栗子.jpg",
+        gender: "未知",
+        description: "可爱的栗子，愿你在喵星也一样幸福，感谢你陪伴校园的每一天，3小只在喵星团聚吧[2026:0306-0424]",
+        characteristics: "彩狸",
+        neutered: "未绝育",
+        leaveReason: "去喵星",
+        updatedAt: "2026-04-26",
+        relations: [
+            { type: "兄/弟/姐/妹", name: "咪酱（小笨）、小盛" }
+        ]
+    },
+    {
+        id: 113,
+        name: "蝙蝠侠",
+        image: "images/灰灰娃2.jpg",
+        gender: "未知",
+        description: "灰灰的孩子，目前被好心人领养了",
+        characteristics: "长毛狸白，毛茸茸的",
+        neutered: "未绝育",
+        leaveReason: "被领养",
+        updatedAt: "2026-04-26",
+        relations: [
+            { type: "兄/弟/姐/妹", name: "Siri、焦糖、待取名2" }
         ]
     }
 
@@ -622,6 +622,11 @@ function getBirthdayTag(birthday) {
     return `<span class="tag tag-birthday">🎂 ${formatBirthday(birthday)}</span>`;
 }
 
+function getHelpReasonTag(helpReason) {
+    if (!helpReason) return '';
+    return `<span class="tag tag-help-reason">💊 ${helpReason}</span>`;
+}
+
 function getRelationsHtml(relations) {
     if (!relations || relations.length === 0) return '';
     const relationTags = relations.map(rel => 
@@ -656,6 +661,7 @@ function displayCats(cats) {
                     ${getGenderTag(cat.gender)}
                     <span class="tag tag-age">🗓 ${cat.age}</span>
                     ${getNeuteredTag(cat.neutered)}
+                    ${getHelpReasonTag(cat.helpReason)}
                 </div>
                 <p class="cat-description">${cat.description}</p>
                 <div class="cat-footer">
@@ -728,6 +734,7 @@ function getLeaveReasonTag(leaveReason) {
     const map = {
         '被领养': 'leave-adopted',
         '走失':   'leave-lost',
+        '去喵星': 'leave-heaven',
         '其他':   'leave-other'
     };
     const cls = map[leaveReason] || 'leave-other';
@@ -811,6 +818,10 @@ function openCatModal(catId) {
                     <strong>外观特征</strong>
                     <span>${cat.characteristics}</span>
                 </div>
+                ${cat.helpReason ? `<div class="modal-detail">
+                    <strong>需要帮助原因</strong>
+                    <span>${cat.helpReason}</span>
+                </div>` : ''}
             </div>
             <div class="modal-description">
                 <span class="desc-label">详细描述</span>

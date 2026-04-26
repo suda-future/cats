@@ -408,6 +408,7 @@ body {
 .tag-birthday   { background: #FFF0F5; color: #C44D8A; }
 .tag-neutered   { background: #DDFAF0; color: #1A7A58; }
 .tag-unneutered { background: #FFF0E0; color: #A06018; }
+.tag-help-reason { background: #FFE8E0; color: #B84020; }
 
 .cat-description {
     color: var(--muted);
@@ -451,6 +452,7 @@ body {
 .tag-leave-reason  { background: #FFF0E0; color: #A06018; }
 .leave-adopted       { background: #D4F5E2; color: #1A7A45; }
 .leave-lost          { background: #FFE4E0; color: #B83820; }
+.leave-heaven        { background: #E8F0FF; color: #4A6BA0; }
 .leave-other         { background: #E8E4F5; color: #6C5FA8; }
 
 /* ──────────────────────────────────────────
@@ -1076,4 +1078,66 @@ body {
 
 @media (min-width: 769px) and (max-width: 1100px) {
     .cats-grid { grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+}
+
+/* 联系我们 */
+.contact-section {
+    margin-top: 1rem;
+    padding: 1.5rem;
+    background: var(--card);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    text-align: center;
+}
+
+.contact-section p {
+    color: var(--muted);
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.qrcode-wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.qrcode-img {
+    width: 180px;
+    height: auto;
+    border-radius: 12px;
+    border: 2px solid var(--border);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* 关于我们 两栏布局 */
+.about-two-col {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    align-items: stretch;
+}
+
+.about-two-col .mission-col,
+.about-two-col .contact-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-two-col .mission-col ul {
+    margin-top: 0.5rem;
+    padding-left: 1.2rem;
+    flex: 1;
+}
+
+.about-two-col .mission-col li {
+    color: var(--text);
+    margin-bottom: 1.4rem;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 600px) {
+    .about-two-col {
+        flex-direction: column;
+    }
 }
