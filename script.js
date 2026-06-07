@@ -4,17 +4,22 @@ const catsData = [
         id: 1,
         name: "灰灰酱",
         image: "images/灰灰酱.jpg",
-        status: "需要帮助",
-        helpReason: "猫瘟混检阳性",
-        age: "0-1岁",
+        status: "健康",
+        age: "1-2岁",
         gender: "母猫",
-        birthday: "2025-05",
+        birthday: "2025年上半年",
         description: "灰灰酱战斗力不详，遇强则强，可以友好地跟她互动",
         characteristics: "狸花色，毛色逐渐发黄",
-        neutered: "未绝育",
-        updatedAt: "2026-04-26",
+        neutered: "已绝育",
+        neuteredDate: "2026-05-14",
+        vaccine: ["2026-05-14", "", ""],
+        updatedAt: "2026-06-07",
         relations: [
             { type: "闺蜜", name: "小灰" },
+            { type: "儿子", name: "Siri" },
+            { type: "孩子", name: "小七" },
+            { type: "女儿", name: "焦糖" },
+            { type: "儿子", name: "南瓜" },
         ]
     },
     {
@@ -29,7 +34,8 @@ const catsData = [
         characteristics: "三花色，小脸大美女",
         neutered: "已绝育",
         neuteredDate: "2026-04-09",
-        updatedAt: "2026-04-13",
+        vaccine: ["", "", ""],
+        updatedAt: "2026-06-07",
         relations: [
             { type: "弟弟", name: "小小橘ABC" },
             { type: "妹妹", name: "小小橘D" },
@@ -43,25 +49,26 @@ const catsData = [
         status: "健康",
         age: "0-1岁",
         gender: "公猫",
-        birthday: "未知",
+        birthday: "2025-10",
         description: "小橘是一只橘白，喜欢围着送饭官蹭蹭蹭，但是吃饭时有点护食，小心被挠。",
         characteristics: "橘白，眼神很无辜",
         neutered: "未绝育",
-        updatedAt: "2026-03-30"
+        vaccine: ["", "", ""],
+        updatedAt: "2026-06-07"
     },
     {
         id: 4,
         name: "面具侠",
         image: "images/面具侠.jpg",
-        status: "需要帮助",
-        helpReason: "猫瘟阳性",
-        age: "1岁",
+        status: "健康",
+        age: "1-2岁",
         gender: "母猫",
-        birthday: "未知",
-        description: "面具侠是一只简州猫，面部像带着面具而得名，大明星的颜值，喜欢干饭，育有3子",
+        birthday: "2025年上半年",
+        description: "面具侠是一只简州猫，面部像带着面具而得名，大明星的颜值，喜欢干饭，曾有3个孩子",
         characteristics: "简州猫，小脸超可爱呀",
         neutered: "未绝育",
-        updatedAt: "2026-04-26",
+        vaccine: ["", "", ""],
+        updatedAt: "2026-06-07",
         relations: [
             { type: "闺蜜", name: "小刘海" }
         ]
@@ -79,7 +86,8 @@ const catsData = [
         characteristics: "橘白，白领带和白手套",
         neutered: "已绝育",
         neuteredDate: "2026-04-09",
-        updatedAt: "2026-04-13",
+        vaccine: ["", "", ""],
+        updatedAt: "2026-06-07",
         relations: [
             { type: "姐姐", name: "小开门" },
             { type: "弟弟", name: "小小橘B" },
@@ -99,7 +107,8 @@ const catsData = [
         characteristics: "橘白，白领带和白手套",
         neutered: "已绝育",
         neuteredDate: "2026-04-09",
-        updatedAt: "2026-04-13",
+        vaccine: ["", "", ""],
+        updatedAt: "2026-06-07",
         relations: [
             { type: "姐姐", name: "小开门" },
             { type: "哥哥", name: "小小橘A" },
@@ -119,7 +128,8 @@ const catsData = [
         characteristics: "橘白，白领带和白手套",
         neutered: "已绝育",
         neuteredDate: "2026-04-14",
-        updatedAt: "2026-04-13",
+        vaccine: ["", "", ""],
+        updatedAt: "2026-06-07",
         relations: [
             { type: "姐姐", name: "小开门" },
             { type: "哥哥", name: "小小橘A" },
@@ -131,15 +141,16 @@ const catsData = [
         id: 6,
         name: "小小橘D",
         image: "images/小小橘ABCD.jpg",
-        status: "需要帮助",
-        helpReason: "猫瘟混检阳性",
+        status: "健康",
         age: "0-1岁",
         gender: "母猫",
         birthday: "2025-11",
         description: "小小橘D和ABC是一胎生，除性别外长相傻傻分不清楚（暂用一张图），摸头的时候稍显抗拒",
         characteristics: "橘白，有白领带和白手套",
-        neutered: "未绝育",
-        updatedAt: "2026-04-26",
+        neutered: "已绝育",
+        neuteredDate: "2026-05-23",
+        vaccine: ["", "", ""],
+        updatedAt: "2026-06-07",
         relations: [
             { type: "姐姐", name: "小开门" },
             { type: "兄/弟", name: "小小橘ABC" }
@@ -150,14 +161,15 @@ const catsData = [
         name: "大白",
         image: "images/大白.jpg",
         status: "健康",
-        age: "3岁",
+        age: "3-4岁",
         gender: "公猫",
-        birthday: "未知",
+        birthday: "2022",
         description: "叫声凄惨，看着可怜。公猫中的战斗机，打遍校园无敌手，在校园里如同做了皇帝一般，不是很爱干净哈哈",
         characteristics: "橘白，左前掌受伤",
         neutered: "已绝育",
         neuteredDate: "2026-04-14",
-        updatedAt: "2026-04-13",
+        vaccine: ["", "", ""],
+        updatedAt: "2026-06-07",
     },
     {
         id: 9,
@@ -166,11 +178,12 @@ const catsData = [
         status: "健康",
         age: "1-2岁",
         gender: "公猫",
-        birthday: "未知",
+        birthday: "2025年上半年",
         description: "公猫中的小清新，蛮可爱哒，不挑食喜欢吃猫粮，喜欢跳起来蹭人，得名马里奥",
         characteristics: "英短蓝白，长相可爱",
         neutered: "未绝育",
-        updatedAt: "2026-04-01",
+        vaccine: ["", "", ""],
+        updatedAt: "2026-06-07",
     },
     {
         id: 10,
@@ -179,11 +192,12 @@ const catsData = [
         status: "健康",
         age: "0-1岁",
         gender: "公猫",
-        birthday: "未知",
+        birthday: "2025年下半年",
         description: "大刘海猫如其名，比较胆小，生人勿近，干饭速度比赛中荣获第二名",
         characteristics: "深狸花加白，额头有刘海",
         neutered: "未绝育",
-        updatedAt: "2026-04-01",
+        vaccine: ["", "", ""],
+        updatedAt: "2026-06-07",
     },
     {
         id: 11,
@@ -192,12 +206,13 @@ const catsData = [
         status: "健康",
         age: "0-1岁",
         gender: "母猫",
-        birthday: "未知",
+        birthday: "2025年下半年",
         description: "三花妹比较胆小，生人勿近，干饭速度比赛中荣获第一名，让我们祝贺她！",
         characteristics: "三花，长得标志",
         neutered: "已绝育",
         neuteredDate: "2026-04-09",
-        updatedAt: "2026-04-07",
+        vaccine: ["", "", ""],
+        updatedAt: "2026-06-07",
     },
     {
         id: 12,
@@ -205,26 +220,28 @@ const catsData = [
         image: "images/斑斑.jpg",
         status: "需要帮助",
         helpReason: "已生产，需养育小猫",
-        age: "1岁",
+        age: "1-2岁",
         gender: "母猫",
-        birthday: "未知",
+        birthday: "2025年上半年",
         description: "斑斑是喜欢神出鬼没的侦探，总在你以为她消失时，从某个角落投来一道神秘的目光",
         characteristics: "狸花加白，嘴角有对小酒窝",
         neutered: "未绝育",
-        updatedAt: "2026-04-26",
+        vaccine: ["", "", ""],
+        updatedAt: "2026-06-07",
     },
     {
         id: 13,
         name: "雪团子",
         image: "images/雪团子.jpg",
         status: "健康",
-        age: "1岁",
+        age: "1-2岁",
         gender: "母猫",
-        birthday: "未知",
+        birthday: "2025年上半年",
         description: "白白的你像个可爱的雪团子，告诉我在哪里可以找到你？",
         characteristics: "三花猫",
         neutered: "未绝育",
-        updatedAt: "2026-04-13",
+        vaccine: ["", "", ""],
+        updatedAt: "2026-06-07",
     },
     {
         id: 14,
@@ -232,30 +249,16 @@ const catsData = [
         image: "images/焦糖.jpg",
         status: "健康",
         age: "0-1岁",
-        gender: "未知",
-        birthday: "2025-02",
+        gender: "母猫",
+        birthday: "2026-02-15",
         description: "灰灰酱的孩子，灰常可爱，爱和麻麻一起恰饭",
         characteristics: "彩狸",
         neutered: "未绝育",
-        updatedAt: "2026-04-23",
+        vaccine: ["", "", ""],
+        updatedAt: "2026-06-07",
         relations: [
-            { type: "兄/弟/姐/妹", name: "Siri、待取名1、待取名2" }
-        ]
-    },
-    {
-        id: 16,
-        name: "待取名2",
-        image: "images/灰灰娃3.jpg",
-        status: "健康",
-        age: "0-1岁",
-        gender: "未知",
-        birthday: "2025-02",
-        description: "灰灰的孩子，等待负责人认领取哟",
-        characteristics: "橘猫，软萌可爱",
-        neutered: "未绝育",
-        updatedAt: "2026-04-23",
-        relations: [
-            { type: "兄/弟/姐/妹", name: "Siri、焦糖、待取名1" }
+            { type: "妈妈", name: "灰灰酱" },
+            { type: "兄/弟/姐/妹", name: "Siri、小七、南瓜" }
         ]
     },
 ];
@@ -271,6 +274,7 @@ const alumniData = [
         characteristics: "狸花，小脸美女",
         neutered: "未绝育",
         leaveReason: "其他",
+        vaccine: ["", "", ""],
         updatedAt: "2026-04-01",
         relations: [
             { type: "闺蜜", name: "灰灰酱" },
@@ -285,6 +289,7 @@ const alumniData = [
         characteristics: "白猫，异瞳，很亲人",
         neutered: "未绝育",
         leaveReason: "其他",
+        vaccine: ["", "", ""],
         updatedAt: "2026-04-03",
         relations: [
             { type: "闺蜜", name: "小开门、面具侠" },
@@ -299,6 +304,7 @@ const alumniData = [
         characteristics: "奶牛，其中一只有媒婆痣",
         neutered: "未绝育",
         leaveReason: "走失",
+        vaccine: ["", "", ""],
         updatedAt: "2026-04-01",
         relations: []
     },
@@ -311,6 +317,7 @@ const alumniData = [
         characteristics: "折耳彩狸，圆脸很可爱",
         neutered: "未绝育",
         leaveReason: "被领养",
+        vaccine: ["", "", ""],
         updatedAt: "2026-04-03",
         relations: []
     },
@@ -323,6 +330,7 @@ const alumniData = [
         characteristics: "橘白，看着挺机灵的一小伙",
         neutered: "未绝育",
         leaveReason: "其他",
+        vaccine: ["", "", ""],
         updatedAt: "2026-04-01",
         relations: []
     },
@@ -335,6 +343,7 @@ const alumniData = [
         characteristics: "狸花，已成百变小猪咪",
         neutered: "已绝育",
         leaveReason: "被领养",
+        vaccine: ["", "", ""],
         updatedAt: "2026-04-02",
         relations: []
     },
@@ -347,6 +356,7 @@ const alumniData = [
         characteristics: "橘猫，聪明宝宝",
         neutered: "未绝育",
         leaveReason: "其他",
+        vaccine: ["", "", ""],
         updatedAt: "2026-04-02",
         relations: [
             { type: "女儿", name: "小开门" },
@@ -365,6 +375,7 @@ const alumniData = [
         characteristics: "三花，萌娃",
         neutered: "未绝育",
         leaveReason: "去喵星",
+        vaccine: ["", "", ""],
         updatedAt: "2026-04-07"
     },
     {
@@ -376,6 +387,7 @@ const alumniData = [
         characteristics: "彩狸，头顶花纹清晰",
         neutered: "未绝育",
         leaveReason: "去喵星",
+        vaccine: ["", "", ""],
         updatedAt: "2026-04-23",
         relations: [
             { type: "兄/弟/姐/妹", name: "栗子、小盛" },
@@ -390,23 +402,10 @@ const alumniData = [
         characteristics: "狸白",
         neutered: "未绝育",
         leaveReason: "去喵星",
+        vaccine: ["", "", ""],
         updatedAt: "2026-04-23",
         relations: [
             { type: "兄/弟/姐/妹", name: "栗子、咪酱（小笨）" },
-        ]
-    },
-    {
-        id: 111,
-        name: "Siri",
-        image: "images/Siri.jpg",
-        gender: "公猫",
-        description: "Siri因为其活泼可爱的性格和甜美长相，一面世就被领养，真正的手慢无系列，现在过上了每天吃饭睡觉玩游戏的日子",
-        characteristics: "长毛狸白，甜美系男孩",
-        neutered: "未绝育",
-        leaveReason: "被领养",
-        updatedAt: "2026-04-23",
-        relations: [
-            { type: "兄/弟/姐/妹", name: "焦糖、待取名1、待取名2" },
         ]
     },
     {
@@ -418,23 +417,58 @@ const alumniData = [
         characteristics: "彩狸",
         neutered: "未绝育",
         leaveReason: "去喵星",
+        vaccine: ["", "", ""],
         updatedAt: "2026-04-26",
         relations: [
             { type: "兄/弟/姐/妹", name: "咪酱（小笨）、小盛" }
         ]
     },
     {
+        id: 111,
+        name: "Siri",
+        image: "images/Siri.jpg",
+        gender: "公猫",
+        description: "Siri因为其活泼可爱的性格和甜美长相，一面世就被领养，真正的手慢无系列，现在过上了每天吃饭睡觉玩游戏的日子",
+        characteristics: "长毛狸白，甜美系男孩",
+        neutered: "未绝育",
+        leaveReason: "被领养",
+        vaccine: ["", "", ""],
+        updatedAt: "2026-06-07",
+        relations: [
+            { type: "妈妈", name: "灰灰酱" },
+            { type: "兄/弟/姐/妹", name: "焦糖、小七、南瓜" },
+        ]
+    },
+    {
         id: 113,
-        name: "蝙蝠侠",
+        name: "小七",
         image: "images/灰灰娃2.jpg",
         gender: "未知",
         description: "灰灰的孩子，目前被好心人领养了",
         characteristics: "长毛狸白，毛茸茸的",
         neutered: "未绝育",
         leaveReason: "被领养",
-        updatedAt: "2026-04-26",
+        vaccine: ["", "", ""],
+        updatedAt: "2026-06-07",
         relations: [
-            { type: "兄/弟/姐/妹", name: "Siri、焦糖、待取名2" }
+            { type: "妈妈", name: "灰灰酱" },
+            { type: "兄/弟/姐/妹", name: "Siri、焦糖、南瓜" }
+        ]
+    },
+    {
+        id: 114,
+        name: "南瓜",
+        image: "images/灰灰娃3.jpg",
+        gender: "公猫",
+        description: "灰灰的孩子，现在已经被好心人领养了",
+        characteristics: "橘猫，软萌可爱",
+        neutered: "未绝育",
+        leaveReason: "被领养",
+        vaccine: ["", "", ""],
+        updatedAt: "2026-06-07",
+        relations: [
+            { type: "妈妈", name: "灰灰酱" },
+            { type: "兄/弟/姐/妹", name: "Siri、焦糖、小七" }
         ]
     }
 
@@ -607,6 +641,10 @@ function getNeuteredTag(neutered) {
 
 function formatBirthday(dateStr) {
     if (!dateStr) return '未知';
+    // 仅年份格式 YYYY
+    if (/^\d{4}$/.test(dateStr)) {
+        return `${dateStr}年`;
+    }
     // 仅年月格式 YYYY-MM
     if (/^\d{4}-\d{2}$/.test(dateStr)) {
         const [y, m] = dateStr.split('-');
@@ -730,6 +768,98 @@ function displayAlumni(cats) {
     `).join('');
 }
 
+// ── 在校全览表格 ────────────────────────────
+let overviewSort = { field: '', asc: true };
+
+// 疫苗备注（打过/扛过猫瘟抗体）
+const vaccineNote = {
+    '小小橘A': '已战胜猫瘟',
+    '小小橘B': '已战胜猫瘟',
+    '小小橘C': '已战胜猫瘟',
+    '小小橘D': '已战胜猫瘟',
+    '小开门': '已战胜猫瘟',
+    '焦糖': '打过猫瘟抗体',
+    '面具侠': '已战胜猫瘟'
+};
+
+function displayOverview() {
+    const tbody = document.getElementById('overviewBody');
+    if (!tbody) return;
+
+    // 排序
+    const sorted = [...catsData];
+    if (overviewSort.field) {
+        sorted.sort((a, b) => {
+            // 疫苗最新接种时间（计算字段）
+            if (overviewSort.field === 'vaccineDate') {
+                let va = a.vaccine.filter(d => d).pop() || '';
+                let vb = b.vaccine.filter(d => d).pop() || '';
+                if (!va && !vb) return 0;
+                if (!va) return 1;
+                if (!vb) return -1;
+                return overviewSort.asc ? va.localeCompare(vb) : vb.localeCompare(va);
+            }
+            let va = a[overviewSort.field];
+            let vb = b[overviewSort.field];
+            // 空值排到末尾
+            if (!va && !vb) return 0;
+            if (!va) return 1;
+            if (!vb) return -1;
+            // vaccine 字段按接种针数排序
+            if (overviewSort.field === 'vaccine') {
+                va = va ? va.filter(d => d).length : 0;
+                vb = vb ? vb.filter(d => d).length : 0;
+            } else {
+                if (typeof va === 'string') va = va.toLowerCase();
+                if (typeof vb === 'string') vb = vb.toLowerCase();
+            }
+            if (va < vb) return overviewSort.asc ? -1 : 1;
+            if (va > vb) return overviewSort.asc ? 1 : -1;
+            return 0;
+        });
+    }
+
+    tbody.innerHTML = sorted.map((cat, index) => `
+        <tr onclick="openCatModal(${cat.id})" style="cursor:pointer;">
+            <td class="tb-seq">${index + 1}</td>
+            <td><img src="${cat.image}" alt="${cat.name}" class="tb-photo" onerror="this.style.display='none'"></td>
+            <td><strong>${cat.name}</strong></td>
+            <td>${getGenderTag(cat.gender)}</td>
+            <td>${cat.age || '未知'}</td>
+            <td>${formatBirthday(cat.birthday)}</td>
+            <td><span class="tb-badge ${cat.status === '健康' ? 'healthy' : 'need-help'}">${cat.status}</span></td>
+            <td><span class="tb-badge ${cat.neutered === '已绝育' ? 'neutered-y' : 'neutered-n'}">${cat.neutered || '未绝育'}</span></td>
+            <td>${cat.neuteredDate || '-'}</td>
+            <td><span class="tb-badge ${cat.vaccine.filter(d => d).length === 3 ? 'vaccine-y' : cat.vaccine.filter(d => d).length > 0 ? 'vaccine-partial' : 'vaccine-n'}">${cat.vaccine.filter(d => d).length}/3针${vaccineNote[cat.name] ? ' · <span class="vaccine-feline">' + vaccineNote[cat.name] + '</span>' : ''}</span></td>
+            <td>${cat.vaccine.filter(d => d).pop() || '-'}</td>
+        </tr>
+    `).join('');
+
+    // 排序表头高亮
+    document.querySelectorAll('#overviewTable th.sortable').forEach(th => {
+        th.classList.toggle('active', th.dataset.sort === overviewSort.field);
+        const arrow = overviewSort.field === th.dataset.sort ? (overviewSort.asc ? ' ▴' : ' ▾') : ' ▾';
+        th.textContent = th.textContent.replace(/ [▴▾]$/, '') + arrow;
+    });
+
+    // 绑定排序事件（只绑定一次）
+    if (!document.getElementById('overviewTable').dataset.bound) {
+        document.getElementById('overviewTable').dataset.bound = '1';
+        document.querySelectorAll('#overviewTable th.sortable').forEach(th => {
+            th.addEventListener('click', () => {
+                const field = th.dataset.sort;
+                if (overviewSort.field === field) {
+                    overviewSort.asc = !overviewSort.asc;
+                } else {
+                    overviewSort.field = field;
+                    overviewSort.asc = true;
+                }
+                displayOverview();
+            });
+        });
+    }
+}
+
 function getLeaveReasonTag(leaveReason) {
     const map = {
         '被领养': 'leave-adopted',
@@ -811,12 +941,16 @@ function openCatModal(catId) {
                     <span>${cat.gender}</span>
                 </div>
                 <div class="modal-detail">
+                    <strong>外观特征</strong>
+                    <span>${cat.characteristics}</span>
+                </div>
+                <div class="modal-detail">
                     <strong>绝育状态</strong>
                     <span>${cat.neutered}${cat.neuteredDate ? '（' + cat.neuteredDate + '）' : ''}</span>
                 </div>
                 <div class="modal-detail">
-                    <strong>外观特征</strong>
-                    <span>${cat.characteristics}</span>
+                    <strong>疫苗状态</strong>
+                    <span>第1针：${cat.vaccine[0] || '待接种'}<br>第2针：${cat.vaccine[1] || '待接种'}<br>第3针：${cat.vaccine[2] || '待接种'}</span>
                 </div>
                 ${cat.helpReason ? `<div class="modal-detail">
                     <strong>需要帮助原因</strong>
@@ -865,6 +999,11 @@ function showPage(pageId) {
     // 如果是离校猫友，应用当前筛选条件
     if (pageId === 'alumni') {
         filterAndDisplayAlumni();
+    }
+
+    // 如果是在校全览
+    if (pageId === 'overview') {
+        displayOverview();
     }
 }
 

@@ -1141,3 +1141,112 @@ body {
         flex-direction: column;
     }
 }
+
+/* ── 在校全览表格 ─────────────────────────── */
+#overview {
+    padding: 1rem 0;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    background: var(--card);
+}
+
+.overview-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    min-width: 750px;
+}
+
+.overview-table thead {
+    background: #9B8FE8;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.overview-table th {
+    padding: 0.85rem 0.75rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.88rem;
+    white-space: nowrap;
+    user-select: none;
+}
+
+.overview-table th.sortable {
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.overview-table th.sortable:hover {
+    background: #7B6FD0;
+}
+.overview-table th.sortable.active {
+    background: #7B6FD0;
+}
+
+.overview-table tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
+}
+.overview-table tbody tr:hover {
+    background: #F8F7FF;
+}
+.overview-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.overview-table td {
+    padding: 0.7rem 0.75rem;
+    vertical-align: middle;
+    color: var(--text);
+    white-space: nowrap;
+}
+
+.overview-table .col-photo { width: 72px; }
+.overview-table .col-seq { width: 44px; text-align: center; }
+.overview-table .tb-seq { text-align: center; color: var(--muted); font-size: 0.85rem; }
+.overview-table .col-name { width: 110px; }
+.overview-table .col-gender { width: 72px; }
+.overview-table .col-age { width: 80px; }
+.overview-table .col-birthday { width: 130px; }
+.overview-table .col-status { width: 96px; }
+.overview-table .col-neutered { width: 72px; }
+.overview-table .col-neutered-date { width: 95px; }
+.overview-table .col-vaccine { width: 90px; }
+.overview-table .col-vaccine-date { width: 120px; }
+
+.overview-table .tb-photo {
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+    object-fit: cover;
+    display: block;
+}
+
+.overview-table .tb-badge {
+    display: inline-block;
+    padding: 0.18rem 0.6rem;
+    border-radius: 10px;
+    font-size: 0.78rem;
+    font-weight: 500;
+}
+.tb-badge.healthy    { background: #E6F9F0; color: #2EAA7B; }
+.tb-badge.need-help  { background: #FFF0E6; color: #E87A3A; }
+.tb-badge.neutered-y { background: #E8F0FE; color: #5B7FDB; }
+.tb-badge.neutered-n { background: #F0EEF5; color: #8A8FAE; }
+.tb-badge.vaccine-y { background: #F0F9EB; color: #67C23A; }
+.tb-badge.vaccine-n { background: #F0EEF5; color: #8A8FAE; }
+.tb-badge.vaccine-partial { background: #FFF7ED; color: #E67E22; }
+.vaccine-feline { color: #E67E22; font-weight: 600; }
+
+
+@media (max-width: 768px) {
+    .overview-table { font-size: 0.8rem; min-width: 600px; }
+    .overview-table th, .overview-table td { padding: 0.5rem 0.4rem; }
+    .overview-table .tb-photo { width: 32px; height: 32px; }
+}
