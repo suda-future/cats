@@ -62,27 +62,6 @@ const catsData = [
 
     },
     {
-        id: 5,
-        name: "小小橘A",
-        image: "images/小小橘ABCD.jpg",
-        status: "健康",
-        age: "0-1岁",
-        gender: "公猫",
-        birthday: "2025-11",
-        description: "小小橘A是三只兄弟中的老大，性格活泼，喜欢奔跑玩耍",
-        characteristics: "橘白，白领带和白手套，左剪耳，三角形剪耳，黄色眼睛",
-        neutered: "已绝育",
-        neuteredDate: "2026-04-09",
-        vaccine: ["", "", ""],
-        updatedAt: "2026-06-07",
-        relations: [
-            { type: "姐姐", name: "小开门" },
-            { type: "弟弟", name: "小小橘B" },
-            { type: "弟弟", name: "小小橘C" },
-            { type: "妹妹", name: "小小橘D" }
-        ]
-    },
-    {
         id: 5.1,
         name: "小小橘B",
         image: "images/小小橘B.jpg",
@@ -176,8 +155,7 @@ const catsData = [
         id: 12,
         name: "斑斑",
         image: "images/斑斑.jpg",
-        status: "需要帮助",
-        helpReason: "已生产，需养育小猫",
+        status: "健康",
         age: "1-2岁",
         gender: "母猫",
         birthday: "2025年上半年",
@@ -185,7 +163,10 @@ const catsData = [
         characteristics: "狸花加白，嘴角有对小酒窝",
         neutered: "未绝育",
         vaccine: ["", "", ""],
-        updatedAt: "2026-06-07",
+        updatedAt: "2026-10-02",
+        relations: [
+            { type: "孩子", name: "琥珀" }
+        ]
     },
     {
         id: 14,
@@ -197,9 +178,10 @@ const catsData = [
         birthday: "2026-02-15",
         description: "灰灰酱同款萌宝，灰常可爱，爱和麻麻一起恰饭，妈宝猫",
         characteristics: "彩狸",
-        neutered: "未绝育",
-        vaccine: ["", "", ""],
-        updatedAt: "2026-06-07",
+        neutered: "已绝育",
+        neuteredDate: "2026-09-20",
+        vaccine: ["2026-09-20", "", ""],
+        updatedAt: "2026-10-02",
         relations: [
             { type: "妈妈", name: "灰灰酱" },
             { type: "兄/弟/姐/妹", name: "Siri、小七、南瓜" }
@@ -211,13 +193,72 @@ const catsData = [
         image: "images/苦瓜.jpg",
         status: "健康",
         age: "未知",
-        gender: "未知",
+        gender: "公猫",
         birthday: "未知",
         description: "战斗力强，酷爱淋雨（可能爱洗澡），神出鬼没",
         characteristics: "橘猫，面带苦相",
         neutered: "未绝育",
         vaccine: ["", "", ""],
         updatedAt: "2026-08-02",
+    },
+    {
+        id: 16,
+        name: "跳跳糖",
+        image: "images/跳跳糖.jpg",
+        status: "健康",
+        age: "约2个月",
+        gender: "未知",
+        birthday: "约2026-08",
+        description: "胆子比较小，正在逐渐变得勇敢、亲近大家。",
+        characteristics: "橘猫，眼睛大，四爪带白",
+        neutered: "未绝育",
+        vaccine: ["", "", ""],
+        updatedAt: "2026-10-02",
+    },
+    {
+        id: 17,
+        name: "蛋黄",
+        image: "images/蛋黄.jpg",
+        status: "健康",
+        age: "约3个月",
+        gender: "未知",
+        birthday: "约2026-07",
+        description: "超级讨人喜欢，自带狸花猫的社牛属性。",
+        characteristics: "狸花猫",
+        neutered: "未绝育",
+        vaccine: ["", "", ""],
+        updatedAt: "2026-10-02",
+    },
+    {
+        id: 18,
+        name: "琥珀",
+        image: "images/琥珀.jpg",
+        status: "健康",
+        age: "约6个月",
+        gender: "未知",
+        birthday: "约2026-04",
+        description: "小美猫，自带优雅的气质。",
+        characteristics: "三花猫，白色为主，面部与尾部带有黑橘花纹",
+        neutered: "未绝育",
+        vaccine: ["", "", ""],
+        updatedAt: "2026-10-02",
+        relations: [
+            { type: "妈妈", name: "斑斑" }
+        ]
+    },
+    {
+        id: 19,
+        name: "小关门",
+        image: "images/小关门.jpg",
+        status: "健康",
+        age: "约1岁",
+        gender: "母猫",
+        birthday: "约2025-10",
+        description: "曾和小开门上演过“真假开门”大戏，外行人第一眼很难分辨。也是一只优雅的小美猫、小吃货。",
+        characteristics: "三花猫，与小开门长相相似",
+        neutered: "未绝育",
+        vaccine: ["", "", ""],
+        updatedAt: "2026-10-02",
     },
 ];
 
@@ -507,6 +548,44 @@ const alumniData = [
         leaveDate: "2026-04",
         vaccine: ["", "", ""],
         updatedAt: "2026-08-02",
+        relations: []
+    },
+    {
+        id: 119,
+        name: "小小橘A",
+        image: "images/小小橘ABCD.jpg",
+        gender: "公猫",
+        age: "0-1岁",
+        birthday: "2025-11",
+        description: "小小橘A是三只兄弟中的老大，性格活泼，喜欢奔跑玩耍",
+        characteristics: "橘白，白领带和白手套，左剪耳，三角形剪耳，黄色眼睛",
+        neutered: "已绝育",
+        neuteredDate: "2026-04-09",
+        leaveReason: "走失",
+        leaveDate: "2026-08",
+        vaccine: ["", "", ""],
+        updatedAt: "2026-10-02",
+        relations: [
+            { type: "姐姐", name: "小开门" },
+            { type: "弟弟", name: "小小橘B" },
+            { type: "弟弟", name: "小小橘C" },
+            { type: "妹妹", name: "小小橘D" }
+        ]
+    },
+    {
+        id: 120,
+        name: "圈圈",
+        image: "images/圈圈.png",
+        gender: "未知",
+        age: "约2个月",
+        birthday: "约2026-08",
+        description: "超级黏人的宝宝，长相软萌，已经找到温暖的港湾啦。",
+        characteristics: "狸花白",
+        neutered: "未绝育",
+        leaveReason: "被领养",
+        leaveDate: "2026-09-30",
+        vaccine: ["", "", ""],
+        updatedAt: "2026-10-02",
         relations: []
     }
 
